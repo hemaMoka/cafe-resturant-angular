@@ -1,0 +1,37 @@
+<section class="py-5">
+  <div class="container">
+    <div class="row justify-content-between align-items-center">
+      <div class="col-md-4">
+            <h1 class="text-center">Login</h1>
+            <p *ngIf="messageError" class="text-center text-danger">{{messageError}}</p>
+            <form (ngSubmit)="handleLogin(login)" [formGroup]="login" class="py-3">
+              <div class="form-group mb-4">
+                <label for="" class="fw-bold mb-2">E-mail</label>
+                <input formControlName="email" type="email" class="form-control shadow-none border border-2 border-black"
+                  placeholder="Example@gmail.com">
+                <div *ngIf="login.get('email')?.getError && login.get('email')?.touched">
+                  <p *ngIf="login.get('email')?.getError('required')" class="alert alert-danger p-1">Email is Required</p>
+                  <p *ngIf="login.get('email')?.getError('email')" class="alert alert-danger p-1">Not Valid Email </p>
+                </div>
+              </div>
+              <div class="form-group mb-4">
+                <label for="" class="fw-bold mb-2">Password</label>
+                <input formControlName="password" type="password" class="form-control shadow-none border border-2 border-black"
+                  placeholder="************">
+                <div *ngIf="login.get('password')?.getError && login.get('password')?.touched">
+                  <p *ngIf="login.get('password')?.getError('required')" class="alert alert-danger p-1"> Password is Required </p>
+                </div>
+              </div>
+              <button [disabled]="login.invalid" class="btn btn-primary">Login Now</button>
+            </form>
+      </div>
+      <div class="col-md-6">
+        <h1>Create Account</h1>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae harum commodi cum minus consectetur
+          placeat libero nobis voluptates soluta eaque in rem fuga, culpa, eos aliquid maiores accusamus? Sed ea
+          inventore ducimus aperiam ullam obcaecati tenetur praesentium consequatur aut a?</p>
+        <a routerLink="/register">Register Now</a>
+      </div>
+    </div>
+  </div>
+</section>

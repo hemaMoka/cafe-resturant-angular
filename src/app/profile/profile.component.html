@@ -1,0 +1,63 @@
+<section class="py-5">
+  <div class="container">
+    <div class="text-center">
+      <h3 class="main-color h1 fw-bolder">Add Your Profile </h3>
+    </div>
+    <form (ngSubmit)="handleAddProfile()" [formGroup]="AddProfileForm" class="w-75 mx-auto py-5">
+      <div class="pb-5">
+        <h4>Personal Informations</h4>
+        <div class="form-group mb-4">
+          <label for="name" class="mb-2">Your Name :</label>
+          <input [value]="userData.name" type="text" id="name" class="form-control border border-2 border-black">
+        </div>
+        <div class="form-group mb-4">
+          <label for="email" class="mb-2">E-mail :</label>
+          <input [value]="userData.email" type="email" id="email" class="form-control border border-2 border-black">
+        </div>
+        <div class="form-group mb-4">
+          <label for="email" class="mb-2">Phone Number :</label>
+          <input [value]="userData.phone" type="tel" id="email" class="form-control border border-2 border-black">
+        </div>
+      </div>
+      <div>
+        <h4> About Cafe Info</h4>
+        <div class="form-group mb-4">
+          <label for="name" class="mb-2">Title :</label>
+          <input formControlName="title" type="text" id="name" class="form-control border border-2 border-black">
+          <div *ngIf="AddProfileForm.get('title')?.errors&&AddProfileForm.get('title')?.touched">
+            <p *ngIf="AddProfileForm.get('title')?.getError('required')" class="text-danger">This Faild Is Required</p>
+          </div>
+        </div>
+        <div class="form-group mb-4">
+          <label for="email" class="mb-2">Location :</label>
+          <input formControlName="location" type="text" id="email" class="form-control border border-2 border-black">
+          <div *ngIf="AddProfileForm.get('location')?.errors&&AddProfileForm.get('location')?.touched">
+            <p *ngIf="AddProfileForm.get('location')?.getError('required')" class="text-danger">This Faild Is Required</p>
+          </div>
+        </div>
+        <div class="form-group mb-4">
+          <label for="email" class="mb-2">Address :</label>
+          <input formControlName="address" type="text" id="email" class="form-control border border-2 border-black">
+          <div *ngIf="AddProfileForm.get('address')?.errors&&AddProfileForm.get('address')?.touched">
+            <p *ngIf="AddProfileForm.get('address')?.getError('required')" class="text-danger">This Faild Is Required</p>
+          </div>
+        </div>
+        <div class="form-group mb-4">
+          <label for="email" class="mb-2">Upload Cafe Image:</label>
+          <input formControlName="image" type="file" id="email" class="form-control border border-2 border-black">
+          <div *ngIf="AddProfileForm.get('image')?.errors&&AddProfileForm.get('image')?.touched">
+            <p *ngIf="AddProfileForm.get('image')?.getError('required')" class="text-danger">This Faild Is Required</p>
+          </div>
+        </div>
+        <div class="form-group mb-4">
+          <label for="email" class="mb-2">Upload Cafe Menue:</label>
+          <input formControlName="menue" type="file" id="email" class="form-control border border-2 border-black">
+            <div *ngIf="AddProfileForm.get('menue')?.errors&&AddProfileForm.get('menue')?.touched">
+              <p *ngIf="AddProfileForm.get('menue')?.getError('required')" class="text-danger">This Faild Is Required</p>
+            </div>
+        </div>
+      </div>
+      <button [disabled]="AddProfileForm.invalid" class="btn btn-outline-dark fs-5 fw-bolder">Send Request</button>
+    </form>
+  </div>
+</section>

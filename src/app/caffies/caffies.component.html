@@ -1,0 +1,20 @@
+<section class="py-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-5">
+        <img [src]="cafe.image" class="w-100" alt="">
+      </div>
+      <div class="col-md-5">
+        <h2 class="fw-bolder">{{cafe.title}}</h2>
+        <h3 class="h5 fw-bolder">Location: <br> {{cafe.location}}</h3>
+        <ul class="list-unstyled">
+          <li *ngFor="let phone of cafe.phone_numbers" class="py-2">
+            <i class="fa-solid fa-phone"></i>
+            {{phone}}
+          </li>
+        </ul>
+        <a class="btn btn-danger fw-bolder" target="_blank" [href]="cafe.menu_path">See Menue</a>
+      </div>
+    </div>
+  </div>
+</section>

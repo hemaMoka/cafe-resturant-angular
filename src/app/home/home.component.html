@@ -1,0 +1,31 @@
+<section class="hero">
+  <div class="container mx-auto h-100 row justify-content-between align-items-center">
+    <div pAnimateOnScroll enterClass="fadein" leaveClass="fadeout" class="content col-md-5">
+      <h1 class="text-uppercase fw-bolder">Refrence</h1>
+      <h2 class="fw-bolder fs-2 logo">Cafe <span>Guide</span></h2>
+      <p class="lead">Lorem ipsum dolor sit amet consectetur </p>
+    </div>
+    <div class="col-md-5">
+      <img class="my-img w-100" src="assets/images/hero.jpg" alt="">
+    </div>
+  </div>
+</section>
+
+<section class="py-5">
+  <div class="container mx-auto">
+    <div class="head">
+      <h2 class="fw-bold ">"Travellers' Choice Best of the Best" </h2>
+    </div>
+    <div class="row g-5 pt-5">
+      <a *ngFor="let cafe of cafes" class="cafe col-md-4" [routerLink]="['/Resturants&cafe',cafe.id]">
+        <div class="mb-3 position-relative">
+          <img width="300" height="300" [src]="cafe.image" class="w-100" alt="">
+          <div class="overlay opacity-0 position-absolute w-100 top-0 h-100 d-flex justify-content-center align-items-center bg-white bg-opacity-75">
+            <p class="fw-bolder text-success fs-3">Click To See More</p>
+          </div>
+        </div>
+        <h5 class="tit fw-bolder">{{cafe.title}}</h5>
+      </a>
+    </div>
+  </div>
+</section>

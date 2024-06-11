@@ -1,0 +1,48 @@
+.hero{
+  height: 70vh;
+}
+
+h1{
+  font-size: 60px;
+}
+
+.logo {
+  color: rgb(95, 94, 91);
+
+  span {
+    color: #A27B5C;
+  }
+}
+
+.my-img{
+border-radius: 50px 50px 0px 50px;
+  -webkit-border-radius: 50px 50px 0px 50px;
+  -moz-border-radius: 50px 50px 0px 50px;
+}
+
+
+.content{
+  animation-duration: 1000;
+}
+
+.cafe{
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.cafe:hover .overlay{
+  opacity: 1 !important;
+}
+
+.overlay{
+  transition: all .5s;
+  -webkit-transition: all .5s;
+  -moz-transition: all .5s;
+  -ms-transition: all .5s;
+  -o-transition: all .5s;
+}
+
+.tit
+{
+  color: #dd510b ;
+}
